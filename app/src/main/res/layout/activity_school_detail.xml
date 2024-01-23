@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="score"
+            type="com.practice.a20240123_murtazawali_nycschools.model.ScoreModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/colorrimary"
+        tools:context=".SchoolDetailActivity">
+        <LinearLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorprmarydark"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/_8sdp"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|start"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                android:padding="@dimen/_5sdp"
+                android:foreground="?android:attr/selectableItemBackground"
+
+                app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="center|start"
+            android:fontFamily="@font/ubuntu_bold"
+            android:includeFontPadding="false"
+            android:text="@string/school_sat_score"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="@dimen/_14ssp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+            <TextView
+                android:id="@+id/dbnTextView"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:text='@{"DBN: "+score.dbn}' />
+
+            <TextView
+                android:id="@+id/schoolNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textColor="@color/white"
+                android:text='@{"School Name: "+score.schoolName}' />
+
+            <TextView
+                android:id="@+id/numOfSatTestTakersTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textColor="@color/white"
+                android:text='@{"Number of SAT Test Takers: "+score.numOfSatTestTakers}' />
+
+            <TextView
+                android:id="@+id/satReadingAvgScoreTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textColor="@color/white"
+                android:text='@{"SAT Critical Reading Avg Score: "+score.satCriticalReadingAvgScore}' />
+
+            <TextView
+                android:id="@+id/satMathAvgScoreTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textColor="@color/white"
+                android:text= '@{"SAT Math Avg Score: "+score.satMathAvgScore}'/>
+
+            <TextView
+                android:id="@+id/satWritingAvgScoreTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/white"
+                android:text= '@{"SAT Writing Avg Score: "+score.satWritingAvgScore}'/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

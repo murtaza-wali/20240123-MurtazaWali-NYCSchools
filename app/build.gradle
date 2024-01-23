@@ -1,0 +1,96 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.practice.a20240123_murtazawali_nycschools'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.practice.a20240123_murtazawali_nycschools"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    buildFeatures {
+        dataBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    // Add the following test dependencies
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation "org.mockito:mockito-android:3.12.4"
+
+
+        testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0'
+        testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin-android:2.2.0'
+
+
+
+
+
+    // Retrofit & Gsonn
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Lifecycle Extensions
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // Room & RxJava Support
+    implementation 'androidx.room:room-runtime:2.2.5'
+    annotationProcessor 'androidx.room:room-compiler:2.2.5'
+    implementation'androidx.room:room-rxjava2:2.2.5'
+
+
+    //Rx Java
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+
+    //Scalable size Units
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+
+    // Rounded Image
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+}
